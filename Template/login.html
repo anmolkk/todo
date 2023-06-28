@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Login Page</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="left-part">
+  <h1>WELCOME TO TODO List</h1>
+  <p>LOGIN PORTAL FOR TODO LIST</p>
+
+
+  <div class="btn-group">
+  </div>
+</div>
+<form method="post">
+  {% csrf_token %}
+  {% for i in messages %}
+  <p style="color:red; font-size: 12px;"> {{i}}</p>
+  {% endfor %}
+  <div class="title">
+    <i class="fas fa-pencil-alt"></i> 
+    <h2>LOGIN </h2>
+  </div>
+  <div class="info" >
+    <div class="form-floating mb-3" style="color: black;">
+      <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username">
+      <label for="floatingInput">User Name</label>
+    </div>
+    <div class="form-floating mb-3" style="color: black;">
+      <input type="text" class="form-control" id="floatingInput" name="password" placeholder="Password">
+      <label for="floatingInput">Password</label>
+    </div>
+  </div>
+  <button type="submit">Submit</button>    
+  <br>
+  <br>
+  <p style="text-align: center;">I Don't Have an Account. <a href="register" style="text-decoration: underline; color: skyblue;">Create Account</a></p>
+            
+</form>
+
+{% endblock %}
